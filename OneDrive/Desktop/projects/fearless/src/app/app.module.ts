@@ -15,9 +15,6 @@ import { JobstatusComponent } from './ingestionservice/jobstatus/jobstatus.compo
 import { HeaderComponent } from './layout/header/header.component';
 import { ServComponent } from './comp/serv/serv.component';
 import { SomeNameComponent } from './plainsight/some-name.component';
-import { HeroComponent } from './plainsight/hero.component';
-import { RamComponent } from './plainsight/header/ram.component';
-import { SvcdashboardComponent } from './svcdashboard/svcdashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -25,17 +22,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { LoginComponentComponent } from './login/login-component.component';
-import { AuthenticationComponent } from './auth/authentication.component';
 import { LoanValidationComponent } from './loan-validation-svc/loan-validation.component';
-import { LoginComponent } from './auths/login/login.component';
-import { LaxComponent } from './ram/sita/lax/lax.component';
-import { LatComponent } from './ram/hero/lat/lat.component';
-import { KaranComponent } from './ram/kita/karan.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     TrainingComponent,
     CurrentTrainingComponent,
     NewTrainingComponent,
@@ -45,16 +36,8 @@ import { KaranComponent } from './ram/kita/karan.component';
     HeaderComponent,
     ServComponent,
     SomeNameComponent,
-    HeroComponent,
-    RamComponent,
-    SvcdashboardComponent,
     LoginComponentComponent,
-    AuthenticationComponent,
     LoanValidationComponent,
-    LoginComponent,
-    LaxComponent,
-    LatComponent,
-    KaranComponent,
   ],
   imports: [
     BrowserModule,

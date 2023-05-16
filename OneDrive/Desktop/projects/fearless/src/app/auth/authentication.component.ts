@@ -1,53 +1,53 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
+// import { Component } from '@angular/core';
+// import { NgForm } from '@angular/forms';
+// import { Observable } from 'rxjs';
 
-import { AuthService, AuthResponseData } from './auth.service';
-@Component({
-  selector: 'app-authentication',
-  templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.css'],
-})
-export class AuthenticationComponent {
-  isLoginMode = true;
-  isLoading = false;
-  error: string = null;
+// import { AuthService, AuthResponseData } from './auth.service';
+// @Component({
+//   selector: 'app-authentication',
+//   templateUrl: './authentication.component.html',
+//   styleUrls: ['./authentication.component.css'],
+// })
+// export class AuthenticationComponent {
+//   isLoginMode = true;
+//   isLoading = false;
+//   // error :string = null;
 
-  constructor(private authService: AuthService) {}
+//   constructor(private authService: AuthService) {}
 
-  onSwitchMode() {
-    this.isLoginMode = !this.isLoginMode;
-  }
+//   onSwitchMode() {
+//     this.isLoginMode = !this.isLoginMode;
+//   }
 
-  onSubmit(form: NgForm) {
-    if (!form.valid) {
-      return;
-    }
-    const email = form.value.email;
-    const password = form.value.password;
+//   onSubmit(form: NgForm) {
+//     if (!form.valid) {
+//       return;
+//     }
+//     const email = form.value.email;
+//     const password = form.value.password;
 
-    let authObs: Observable<AuthResponseData>;
+//     let authObs: Observable<AuthResponseData>;
 
-    this.isLoading = true;
+//     this.isLoading = true;
 
-    if (this.isLoginMode) {
-      authObs = this.authService.login(email, password);
-    } else {
-      authObs = this.authService.signup(email, password);
-    }
+//     if (this.isLoginMode) {
+//       authObs = this.authService.login(email, password);
+//     } else {
+//       authObs = this.authService.signup(email, password);
+//     }
 
-    authObs.subscribe(
-      (resData) => {
-        console.log(resData);
-        this.isLoading = false;
-      },
-      (errorMessage) => {
-        console.log(errorMessage);
-        this.error = errorMessage;
-        this.isLoading = false;
-      }
-    );
+//     authObs.subscribe(
+//       (resData) => {
+//         console.log(resData);
+//         this.isLoading = false;
+//       },
+//       (errorMessage) => {
+//         console.log(errorMessage);
+//         // this.error = errorMessage;
+//         this.isLoading = false;
+//       }
+//     );
 
-    form.reset();
-  }
-}
+//     form.reset();
+//   }
+// }
